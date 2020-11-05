@@ -1,9 +1,5 @@
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-import sun.jvm.hotspot.memory.SymbolTable;
 
-import javax.naming.InitialContext;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Stack;
