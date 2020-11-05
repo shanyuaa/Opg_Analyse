@@ -61,6 +61,11 @@ public class OpgAnalyse {
             char ch = line.charAt(i); //获得字符串第一个字符
             char sch = (char)s.peek(); //获得栈顶字符
 
+            if(sch>'i' || ch>'i'){
+                System.out.println("E");
+                return;
+            }
+
 
             if(sch != 'N'){
                 if(SymTable[sch][ch] == '<' || SymTable[sch][ch] == '='){ //进栈
