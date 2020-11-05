@@ -156,8 +156,8 @@ public class OpgAnalyse {
 
 
     public static void main(String[] args) throws IOException {
-       // String name = args[0];
-        FileReader fr = new FileReader("/Users/wzy/Desktop/sf/a.txt");
+        String name = args[0];
+        FileReader fr = new FileReader(name);
         BufferedReader br = new BufferedReader(fr);
         StringBuffer line = new StringBuffer(br.readLine());
         line.append('#');
