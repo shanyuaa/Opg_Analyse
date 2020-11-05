@@ -1,8 +1,9 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Stack;
+
+import static java.lang.System.exit;
 
 public class OpgAnalyse {
     public static char[][] SymTable= new char[110][110];
@@ -63,7 +64,7 @@ public class OpgAnalyse {
 
             if(sch>'i' || ch>'i'){
                 System.out.println("E");
-                return;
+                exit(0);
             }
 
 
@@ -89,7 +90,7 @@ public class OpgAnalyse {
 //                }
                 else {
                     System.out.println("E");
-                    return;
+                    exit(0);
                 }
             }
             else{
@@ -114,7 +115,10 @@ public class OpgAnalyse {
 //                else if(sch == '#'){
 //                    return;
 //                }
-                else System.out.println("E");
+                else {
+                    System.out.println("E");
+                    exit(0);
+                }
             }
 
 //            if(ch == '#'){
@@ -144,12 +148,12 @@ public class OpgAnalyse {
                 }
                 else {
                     System.out.println("RE");
-                    return;
+                    exit(0);
                 }
             }
             else{
                 System.out.println("RE");
-                return;
+                exit(0);
             }
         }
         else if(ch == 'N'){
@@ -165,17 +169,17 @@ public class OpgAnalyse {
                 }
                 else {
                     System.out.println("RE");
-                    return;
+                    exit(0);
                 }
             }
             else {
                 System.out.println("RE");
-                return;
+                exit(0);
             }
         }
         else {
             System.out.println("RE");
-            return;
+            exit(0);
         }
     }
 
