@@ -66,6 +66,10 @@ public class OpgAnalyse {
                 return;
             }
 
+            if(sch == '#' && ch == '#'){
+                return;
+            }
+
 
             if(sch != 'N'){
                 if(SymTable[sch][ch] == '<' || SymTable[sch][ch] == '='){ //进栈
@@ -134,10 +138,14 @@ public class OpgAnalyse {
                     stack.push('N');
                     System.out.println("R");
                 }
-                else System.out.println("RE");
+                else {
+                    System.out.println("RE");
+                    return;
+                }
             }
             else{
                 System.out.println("RE");
+                return;
             }
         }
         else if(ch == 'N'){
@@ -151,11 +159,20 @@ public class OpgAnalyse {
                     stack.push('N');
                     System.out.println("R");
                 }
-                else System.out.println("RE");
+                else {
+                    System.out.println("RE");
+                    return;
+                }
             }
-            else System.out.println("RE");
+            else {
+                System.out.println("RE");
+                return;
+            }
         }
-        else System.out.println("RE");
+        else {
+            System.out.println("RE");
+            return;
+        }
     }
 
 
