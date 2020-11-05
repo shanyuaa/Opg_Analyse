@@ -36,7 +36,7 @@ public class OpgAnalyse {
         sym['(']['+'] = '<';
         sym['(']['*'] = '<';
         sym['(']['i'] = '<';
-        sym['('][')'] = '<';
+        sym['(']['('] = '<';
         sym['('][')'] = '=';
         sym[')']['+'] = '>';
         sym[')']['*'] = '>';
@@ -183,7 +183,7 @@ public class OpgAnalyse {
 
     public static void main(String[] args) throws IOException {
         String name = args[0];
-        //FileReader fr = new FileReader("/Users/wzy/Desktop/sf/a.txt");
+//        FileReader fr = new FileReader("/Users/wzy/Desktop/sf/a.txt");
         FileReader fr = new FileReader(name);
         BufferedReader br = new BufferedReader(fr);
         StringBuffer line = new StringBuffer(br.readLine());
