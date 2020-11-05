@@ -61,10 +61,7 @@ public class OpgAnalyse {
             char ch = line.charAt(i); //获得字符串第一个字符
             char sch = (char)s.peek(); //获得栈顶字符
 
-            if(ch == '#'){
-                reduction(s);
-                return;
-            }
+
             if(sch != 'N'){
                 if(SymTable[sch][ch] == '<' || SymTable[sch][ch] == '='){ //进栈
                     s.push(ch);
@@ -105,6 +102,11 @@ public class OpgAnalyse {
 //                    return;
 //                }
                 else System.out.println("E");
+            }
+
+            if(ch == '#'){
+                reduction(s);
+                return;
             }
         }
     }
@@ -154,8 +156,8 @@ public class OpgAnalyse {
 
 
     public static void main(String[] args) throws IOException {
-        String name = args[0];
-        FileReader fr = new FileReader(name);
+       // String name = args[0];
+        FileReader fr = new FileReader("/Users/wzy/Desktop/sf/a.txt");
         BufferedReader br = new BufferedReader(fr);
         StringBuffer line = new StringBuffer(br.readLine());
         line.append('#');
