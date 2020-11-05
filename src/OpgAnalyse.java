@@ -66,19 +66,20 @@ public class OpgAnalyse {
                 return;
             }
 
-            if(sch == '#' && ch == '#'){
-                return;
-            }
+
 
 
             if(sch != 'N'){
+                if(sch == '#' && ch == '#'){
+                    return;
+                }
                 if(SymTable[sch][ch] == '<' || SymTable[sch][ch] == '='){ //进栈
                     s.push(ch);
                     System.out.println("I"+ch);
                     i++;
-                    if((ch == 'i' || ch == ')') && SymTable[sch][ch] == '>'){
-                        reduction(s);
-                    }
+//                    if((ch == 'i' || ch == ')') && SymTable[sch][ch] == '>'){
+//                        reduction(s);
+//                    }
                 }
                 else if(SymTable[sch][ch] == '>'){ //规约
                     reduction(s);
@@ -94,14 +95,17 @@ public class OpgAnalyse {
             else{
                 s.pop();
                 sch = (char)s.peek();
+                if(sch == '#' && ch == '#'){
+                    return;
+                }
                 if(SymTable[sch][ch] == '<' || SymTable[sch][ch] == '='){ //进栈
                     s.push('N');
                     s.push(ch);
                     System.out.println("I"+ch);
                     i++;
-                    if((ch == 'i' || ch == ')') && SymTable[sch][ch] == '>'){
-                        reduction(s);
-                    }
+//                    if((ch == 'i' || ch == ')') && SymTable[sch][ch] == '>'){
+//                        reduction(s);
+//                    }
                 }
                 else if(SymTable[sch][ch] == '>'){ //规约
                     s.push('N');
@@ -113,10 +117,10 @@ public class OpgAnalyse {
                 else System.out.println("E");
             }
 
-            if(ch == '#'){
-                reduction(s);
-                return;
-            }
+//            if(ch == '#'){
+//                reduction(s);
+//                return;
+//            }
         }
     }
 
@@ -178,8 +182,8 @@ public class OpgAnalyse {
 
 
     public static void main(String[] args) throws IOException {
-        String name = args[0];
-        FileReader fr = new FileReader(name);
+        //String name = args[0];
+        FileReader fr = new FileReader("/Users/wzy/Desktop/sf/a.txt");
         BufferedReader br = new BufferedReader(fr);
         StringBuffer line = new StringBuffer(br.readLine());
         line.append('#');
